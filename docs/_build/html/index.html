@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to Brenda Miao Project 3’s documentation! &mdash; Brenda Miao Project 3  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Brenda Miao Project 3
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Brenda Miao Project 3’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Brenda Miao Project 3</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to Brenda Miao Project 3’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-scripts.NN">
+<span id="welcome-to-brenda-miao-project-3-s-documentation"></span><h1>Welcome to Brenda Miao Project 3’s documentation!<a class="headerlink" href="#module-scripts.NN" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="scripts.NN.NeuralNetwork">
+<em class="property">class </em><code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">NeuralNetwork</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sizes</span></em>, <em class="sig-param"><span class="n">activation</span><span class="o">=</span><span class="default_value">'sigmoid'</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="o">=</span><span class="default_value">0.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic class for a neural network with an arbitrary number of layers and specified activation function</p>
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.activation">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">activation</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.activation" title="Permalink to this definition">¶</a></dt>
+<dd><p>specified activation function to use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.dx_activation">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">dx_activation</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.dx_activation" title="Permalink to this definition">¶</a></dt>
+<dd><p>derivative of specified activation function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.losses">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">losses</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.losses" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of average loss at each epoch</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;float&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.z_values">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">z_values</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.z_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>list to store pre-activation values at each layer to make backpropagation calculations easier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;np.array&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.bias">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">bias</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.bias" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of biases for each layer of the network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;float&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.weights">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">weights</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weights between each layer of the network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;np.ndarray&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.layers">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">layers</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of vectors containing input/activation values at each layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;np.array&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.alpha">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">alpha</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>learning rate of the network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float or int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.epsilon">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">epsilon</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.epsilon" title="Permalink to this definition">¶</a></dt>
+<dd><p>random float to prevent divide by 0 errors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sizes</strong> (<em>list&lt;int&gt;</em>) – stored as self.layers</p></li>
+<li><p><strong>activation</strong> (<em>str</em>) – “sigmoid” or “ReLU” to specify which activation function should be used, default=”sigmoid”</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – seed to set for numpy.random, use None for random seed, default=0</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – stored as self.alpha, default=0.1</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – stored as self.epsilon, default=0.001</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork._sigmoid">
+<em class="property">static </em><code class="sig-name descname">_sigmoid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork._sigmoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sigmoid activation function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork._dxSigmoid">
+<em class="property">static </em><code class="sig-name descname">_dxSigmoid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork._dxSigmoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derivative of the sigmoid activation function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork._ReLU">
+<em class="property">static </em><code class="sig-name descname">_ReLU</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork._ReLU" title="Permalink to this definition">¶</a></dt>
+<dd><p>ReLU activation function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork._dxReLU">
+<em class="property">static </em><code class="sig-name descname">_dxReLU</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork._dxReLU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derivative of the ReLU function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagates input values through the network, and sets the values
+of each layer to the activation of the previous layer</p>
+<p>Parameters:
+values : np.array
+array containing sample x feature values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork.backpropagate">
+<code class="sig-name descname">backpropagate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.backpropagate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform backpropagation to update the weights and bias</p>
+<p>y : np.array
+array containing ground truth values for error calculations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_x</span></em>, <em class="sig-param"><span class="n">test_y</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">250</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains the network using feedforward and backpropagation</p>
+<p>test_x :
+test_y :</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="scripts.NN.NeuralNetwork.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits a trained network to a new set of values</p>
+<p>test_values :</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="scripts.NN.encode">
+<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fasta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>One-hot encoding of nucleotide sequences</p>
+<p>Parameters:
+fasta : str
+Nucleotide sequence to be one-hot encoded</p>
+<p>Returns:
+np.array : one-hot and flattened vector encoding input fasta sequence</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="scripts.NN.read_fasta">
+<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">read_fasta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.read_fasta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses fasta file to retrieve fasta sequence</p>
+<p>Parameter:
+input_file: str, path-like
+Path to fasta file</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="scripts.NN.kFold">
+<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">kFold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">x_val</span></em>, <em class="sig-param"><span class="n">y_val</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">[68, 50, 25, 1]</span></em>, <em class="sig-param"><span class="n">activation</span><span class="o">=</span><span class="default_value">'sigmoid'</span></em>, <em class="sig-param"><span class="n">lr</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">250</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.kFold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the training set into k random folds by shuffling then splitting the dataset into k folds</p>
+<p>Parameters:</p>
+<p>Returns:
+float : average AUC calculated across the folds</p>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Brenda Miao.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
