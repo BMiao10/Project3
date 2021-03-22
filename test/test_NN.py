@@ -42,9 +42,9 @@ def test_init_model():
 	# create neural net 
 	nn = NN.NeuralNetwork(sizes=[3,2,1])
 
-    # test that weights are the correct sizes
-    assert nn.weights[0].shape == (2,3)
-    assert nn.weights[1].shape == (1,2)
+	# test that weights are the correct sizes
+	assert nn.weights[0].shape == (2,3)
+	assert nn.weights[1].shape == (1,2)
 
 	# test that bias are the correct sizes
 	assert len(nn.bias) == 3
@@ -52,9 +52,9 @@ def test_init_model():
 	# create neural net 
 	nn2 = NN.NeuralNetwork(sizes=[1,2,3])
 
-    # test that weights are the correct sizes
-    assert nn2.weights[0].shape == (2,1)
-    assert nn2.weights[1].shape == (3,2)
+	# test that weights are the correct sizes
+	assert nn2.weights[0].shape == (2,1)
+	assert nn2.weights[1].shape == (3,2)
 
 	# test that bias are the correct sizes
 	assert len(nn2.bias) == 3
@@ -62,10 +62,10 @@ def test_init_model():
 	# create 4-layer neural net 
 	nn3 = NN.NeuralNetwork(sizes=[1,2,3,4])
 
-    # test that weights are the correct sizes
-    assert nn3.weights[0].shape == (2,1)
-    assert nn3.weights[1].shape == (3,2)
-    assert nn3.weights[2].shape == (4,3)
+	# test that weights are the correct sizes
+	assert nn3.weights[0].shape == (2,1)
+	assert nn3.weights[1].shape == (3,2)
+	assert nn3.weights[2].shape == (4,3)
 
 	# test that bias are the correct sizes
 	assert len(nn3.bias) == 4
@@ -76,8 +76,8 @@ def test_fit():
 	nn = NN.NeuralNetwork(sizes=[3,1,3], seed=0)
 
 	# test that weights are the correct sizes
-    assert nn.weights[0].shape == (1,3)
-    assert nn.weights[1].shape == (3,1)
+	assert (nn.weights[0].shape == (1,3))
+	assert (nn.weights[1].shape == (3,1))
 
 	# test that bias are the correct sizes
 	assert len(nn.bias) == 3
@@ -117,13 +117,5 @@ def test_predict():
 	assert (nn.predict(test_x).shape == (2,1))
 	assert (nn.predict(test_x2).shape == (3,1))
 	assert (nn.predict(test_x3).shape == (4,1))
-
-
-
-
-
-
-
-
 
 
