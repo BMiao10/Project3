@@ -157,9 +157,33 @@
 <span id="welcome-to-brenda-miao-project-3-s-documentation"></span><h1>Welcome to Brenda Miao Project 3’s documentation!<a class="headerlink" href="#module-scripts.NN" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="scripts.NN.NeuralNetwork">
-<em class="property">class </em><code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">NeuralNetwork</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sizes</span></em>, <em class="sig-param"><span class="n">activation</span><span class="o">=</span><span class="default_value">'sigmoid'</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="o">=</span><span class="default_value">0.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">NeuralNetwork</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sizes</span></em>, <em class="sig-param"><span class="n">activation</span><span class="o">=</span><span class="default_value">'sigmoid'</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">250</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Generic class for a neural network with an arbitrary number of layers and specified activation function</p>
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.epsilon">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">epsilon</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.epsilon" title="Permalink to this definition">¶</a></dt>
+<dd><p>random float to prevent divide by 0 errors
+self.alpha (float or int) : learning rate of the network
+self.epochs (int) : number of times to run dataset through model (while loss is above a threshold)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.threshold">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">threshold</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>threshold for stopping when the loss is below this value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt id="scripts.NN.NeuralNetwork.self.activation">
 <code class="sig-prename descclassname">self.</code><code class="sig-name descname">activation</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.activation" title="Permalink to this definition">¶</a></dt>
@@ -205,6 +229,17 @@
 </dd></dl>
 
 <dl class="py attribute">
+<dt id="scripts.NN.NeuralNetwork.self.layers">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">layers</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of vectors containing input/activation values at each layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list&lt;np.array&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt id="scripts.NN.NeuralNetwork.self.bias">
 <code class="sig-prename descclassname">self.</code><code class="sig-name descname">bias</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.bias" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of biases for each layer of the network</p>
@@ -226,47 +261,15 @@
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt id="scripts.NN.NeuralNetwork.self.layers">
-<code class="sig-prename descclassname">self.</code><code class="sig-name descname">layers</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.layers" title="Permalink to this definition">¶</a></dt>
-<dd><p>list of vectors containing input/activation values at each layer</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>list&lt;np.array&gt;</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="scripts.NN.NeuralNetwork.self.alpha">
-<code class="sig-prename descclassname">self.</code><code class="sig-name descname">alpha</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.alpha" title="Permalink to this definition">¶</a></dt>
-<dd><p>learning rate of the network</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float or int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="scripts.NN.NeuralNetwork.self.epsilon">
-<code class="sig-prename descclassname">self.</code><code class="sig-name descname">epsilon</code><a class="headerlink" href="#scripts.NN.NeuralNetwork.self.epsilon" title="Permalink to this definition">¶</a></dt>
-<dd><p>random float to prevent divide by 0 errors</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sizes</strong> (<em>list&lt;int&gt;</em>) – stored as self.layers</p></li>
+<li><p><strong>sizes</strong> (<em>list&lt;int&gt;</em>) – the number of nodes at each layer (architecture of notebook), stored as self.layers</p></li>
 <li><p><strong>activation</strong> (<em>str</em>) – “sigmoid” or “ReLU” to specify which activation function should be used, default=”sigmoid”</p></li>
 <li><p><strong>seed</strong> (<em>int</em>) – seed to set for numpy.random, use None for random seed, default=0</p></li>
-<li><p><strong>alpha</strong> (<em>float</em>) – stored as self.alpha, default=0.1</p></li>
-<li><p><strong>epsilon</strong> (<em>float</em>) – stored as self.epsilon, default=0.001</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – learning rate, stored as self.alpha, default=0.1</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – small number to avoid divide by zeros, stored as self.epsilon, default=0.001</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – max number of epochs to run, stored as self.epochs, default=250</p></li>
 </ul>
 </dd>
 </dl>
@@ -297,34 +300,48 @@
 <dl class="py method">
 <dt id="scripts.NN.NeuralNetwork.forward">
 <code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.forward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Propagates input values through the network, and sets the values
-of each layer to the activation of the previous layer</p>
-<p>Parameters:
-values : np.array
-array containing sample x feature values</p>
+<dd><p>Propagates input values through the network, and sets the values of each layer to the activation of the previous layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>np.ndarray</em>) – array containing values in sample x feature format</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="scripts.NN.NeuralNetwork.backpropagate">
 <code class="sig-name descname">backpropagate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.backpropagate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform backpropagation to update the weights and bias</p>
-<p>y : np.array
-array containing ground truth values for error calculations</p>
+<dd><p>Perform backpropagation to update the weights and bias of the network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>y</strong> (<em>np.array</em>) – array containing ground truth values for error calculations</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="scripts.NN.NeuralNetwork.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_x</span></em>, <em class="sig-param"><span class="n">test_y</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">250</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_x</span></em>, <em class="sig-param"><span class="n">test_y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trains the network using feedforward and backpropagation</p>
-<p>test_x :
-test_y :</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>test_x</strong> (<em>np.ndarray</em>) – array containing values in sample x feature format</p></li>
+<li><p><strong>test_y</strong> (<em>np.ndarray</em>) – array of ground truth values for each sample in text_x</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="scripts.NN.NeuralNetwork.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.NeuralNetwork.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits a trained network to a new set of values</p>
-<p>test_values :</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>test_values</strong> (<em>np.ndarray</em>) – array containing values in sample x feature format</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -333,29 +350,78 @@ test_y :</p>
 <dt id="scripts.NN.encode">
 <code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fasta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-hot encoding of nucleotide sequences</p>
-<p>Parameters:
-fasta : str
-Nucleotide sequence to be one-hot encoded</p>
-<p>Returns:
-np.array : one-hot and flattened vector encoding input fasta sequence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fasta</strong> (<em>str</em>) – nucleotide sequence to be one-hot encoded</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>one-hot and flattened vector encoding input fasta sequence</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="scripts.NN.read_fasta">
 <code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">read_fasta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.read_fasta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parses fasta file to retrieve fasta sequence</p>
-<p>Parameter:
-input_file: str, path-like
-Path to fasta file</p>
+<dd><p>Parses fasta file to retrieve a list of fasta sequence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_file</strong> (<em>str</em><em>, </em><em>path-like</em>) – Path to fasta file to be read in. Fasta file can contain list of sequences with or without fasta headers</p></li>
+<li><p><strong>Returns</strong> – list : list of sequences extracted from fasta file</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="scripts.NN.kFold">
-<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">kFold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">x_val</span></em>, <em class="sig-param"><span class="n">y_val</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">[68, 50, 25, 1]</span></em>, <em class="sig-param"><span class="n">activation</span><span class="o">=</span><span class="default_value">'sigmoid'</span></em>, <em class="sig-param"><span class="n">lr</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">250</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.kFold" title="Permalink to this definition">¶</a></dt>
+<dt id="scripts.NN.kfold">
+<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">kfold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">x_val</span></em>, <em class="sig-param"><span class="n">y_val</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">nn_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.kfold" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split the training set into k random folds by shuffling then splitting the dataset into k folds</p>
-<p>Parameters:</p>
-<p>Returns:
-float : average AUC calculated across the folds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_val</strong> (<em>np.ndarray</em>) – array containing values in sample x feature format</p></li>
+<li><p><strong>y_val</strong> (<em>np.ndarray</em>) – array of ground truth values for each sample in x_val</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – whether to set random seed for random sampling, default=None</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – whether to print losses for each fold, default=False</p></li>
+<li><p><strong>**nn_params</strong> (<em>dict</em>) – dictionary of parameters to initialize the Neural Network to be initialized</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>average AUC calculated across the folds</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="scripts.NN.geneticAlgo">
+<code class="sig-prename descclassname">scripts.NN.</code><code class="sig-name descname">geneticAlgo</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">x_vals</em>, <em class="sig-param">y_vals</em>, <em class="sig-param">model=&lt;class 'scripts.NN.NeuralNetwork'&gt;</em>, <em class="sig-param">k=7</em>, <em class="sig-param">max_iter=5</em><span class="sig-paren">)</span><a class="headerlink" href="#scripts.NN.geneticAlgo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the training set into k random folds by shuffling then splitting the dataset into k folds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>list&lt;list&gt;</em>) – list of parameters to test for, each parameter should have order “size, activation, alpha, epochs”</p></li>
+<li><p><strong>x_vals</strong> (<em>np.ndarray</em>) – array containing values in sample x feature format</p></li>
+<li><p><strong>y_vals</strong> (<em>np.ndarray</em>) – array of ground truth values for each sample in x_vals</p></li>
+<li><p><strong>model</strong> (<em>Model object</em>) – type of model to use for testing, default=NeuralNetwork</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – number of folds to use for k-fold validation, default=7</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – number of iterations to run genetic algorithm for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of parameters from the best model selected in the genetic algorithm</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="toctree-wrapper compound">

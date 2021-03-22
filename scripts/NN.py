@@ -8,25 +8,25 @@ class NeuralNetwork():
     Generic class for a neural network with an arbitrary number of layers and specified activation function
         
     Attributes:
+    	self.epsilon (float) : random float to prevent divide by 0 errors
+		self.alpha (float or int) : learning rate of the network 
+		self.epochs (int) : number of times to run dataset through model (while loss is above a threshold)
+        self.threshold (float) : threshold for stopping when the loss is below this value
         self.activation (function) : specified activation function to use
         self.dx_activation (function) : derivative of specified activation function
         self.losses (list<float>) : list of average loss at each epoch
         self.z_values (list<np.array>) : list to store pre-activation values at each layer to make backpropagation calculations easier
+        self.layers (list<np.array>) : list of vectors containing input/activation values at each layer
         self.bias (list<float>) : list of biases for each layer of the network
         self.weights (list<np.ndarray>) : list of weights between each layer of the network
-        self.layers (list<np.array>) : list of vectors containing input/activation values at each layer
-        self.alpha (float or int) : learning rate of the network 
-        self.epsilon (float) : random float to prevent divide by 0 errors
-        self.epochs (int) : number of times to run dataset through model
-        self.threshold (float) : threshold for stopping when the loss is below this value
-
+        
     Parameters:
-        sizes (list<int>) : stored as self.layers
+        sizes (list<int>) : the number of nodes at each layer (architecture of notebook), stored as self.layers
         activation (str) : "sigmoid" or "ReLU" to specify which activation function should be used, default="sigmoid"
         seed (int) : seed to set for numpy.random, use None for random seed, default=0
-        alpha (float) : stored as self.alpha, default=0.1
-        epsilon (float) : stored as self.epsilon, default=0.001
-        epochs (int) : stored as self.epochs, default=250
+        alpha (float) : learning rate, stored as self.alpha, default=0.1
+        epsilon (float) : small number to avoid divide by zeros, stored as self.epsilon, default=0.001
+        epochs (int) : max number of epochs to run, stored as self.epochs, default=250
     
     """
     
@@ -130,7 +130,7 @@ class NeuralNetwork():
     
     def backpropagate(self, y):
         """
-        Perform backpropagation to update the weights and bias
+        Perform backpropagation to update the weights and bias of the network
         
         Parameters:
             y (np.array) : array containing ground truth values for error calculations
@@ -243,10 +243,13 @@ def encode(fasta):
 # input fasta files of alignments
 def read_fasta(input_file):
     """
-    Parses fasta file to retrieve fasta sequence
+    Parses fasta file to retrieve a list of fasta sequence
     
-    Parameter:
+    Parameters:
         input_file (str, path-like) : Path to fasta file to be read in. Fasta file can contain list of sequences with or without fasta headers
+	
+	Returns:
+		list : list of sequences extracted from fasta file
 
     """
 
@@ -276,15 +279,16 @@ def read_fasta(input_file):
 
 #NeuralNetwork(sizes=layers, activation=activation, alpha=lr)
 
-def kfold(k, x_val, y_val, seed=0, quiet=True, **nn_params):
+def kfold(k, x_val, y_val, seed=None, quiet=True, **nn_params):
     """
     Split the training set into k random folds by shuffling then splitting the dataset into k folds
     
     Parameters:
-        x_val : 
-        y_val : 
-        epochs : default=250
-        quiet : default=True
+        x_val (np.ndarray) : array containing values in sample x feature format 
+        y_val (np.ndarray) : array of ground truth values for each sample in x_val
+        seed (int) : whether to set random seed for random sampling, default=None
+        quiet (bool) : whether to print losses for each fold, default=False
+        **nn_params (dict) : dictionary of parameters to initialize the Neural Network to be initialized
 
     Returns:
         float : average AUC calculated across the folds
@@ -338,7 +342,22 @@ def kfold(k, x_val, y_val, seed=0, quiet=True, **nn_params):
     return auc/k
 
 def geneticAlgo(params, x_vals, y_vals, model=NeuralNetwork, k=7, max_iter=5):
+    """
+    Split the training set into k random folds by shuffling then splitting the dataset into k folds
     
+    Parameters:
+    	params (list<list>) : list of parameters to test for, each parameter should have order "size, activation, alpha, epochs"
+        x_vals (np.ndarray) : array containing values in sample x feature format 
+        y_vals (np.ndarray) : array of ground truth values for each sample in x_vals
+        model (Model object) : type of model to use for testing, default=NeuralNetwork
+        k (int) : number of folds to use for k-fold validation, default=7
+        max_iter (int) : number of iterations to run genetic algorithm for
+
+    Returns:
+        list : list of parameters from the best model selected in the genetic algorithm
+    
+    """
+
     # keep track of the best model
     best_model = params[0]
     best_auc = 0
