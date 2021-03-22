@@ -2,7 +2,6 @@ import pytest
 import numpy as np
 from scripts import NN
 
-
 def test_encoder():
 
 	# test that each letter is being properly encoded
