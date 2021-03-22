@@ -18,6 +18,7 @@ class NeuralNetwork():
         self.alpha (float or int) : learning rate of the network 
         self.epsilon (float) : random float to prevent divide by 0 errors
         self.epochs (int) : number of times to run dataset through model
+        self.threshold (float) : threshold for stopping when the loss is below this value
 
     Parameters:
         sizes (list<int>) : stored as self.layers
@@ -29,7 +30,7 @@ class NeuralNetwork():
     
     """
     
-    def __init__(self, sizes, activation="sigmoid", seed=0, alpha=0.1, epsilon=0.001, epochs=250, threshold=0.001):
+    def __init__(self, sizes, activation="sigmoid", seed=0, alpha=0.1, epsilon=0.001, epochs=250, threshold=0.01):
         """
         Constructor method for NeuralNetwork class
         """
@@ -40,6 +41,7 @@ class NeuralNetwork():
         self.epsilon=epsilon
         self.alpha=alpha
         self.epochs=epochs
+        self.threshold=threshold
         
         # intialize the activation function and its corresponding derivative
         if activation =="ReLU":
@@ -102,8 +104,7 @@ class NeuralNetwork():
     
     def forward(self, values):
         """
-        Propagates input values through the network, and sets the values
-        of each layer to the activation of the previous layer 
+        Propagates input values through the network, and sets the values of each layer to the activation of the previous layer 
         
         Parameters:
             values (np.ndarray) : array containing values in sample x feature format 

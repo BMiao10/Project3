@@ -14,7 +14,8 @@
 │   ├── __main__.py
 │   ├── _init__.py
 │   └── algs.py
-│  
+│   ...
+├── output  
 ├── docs
 │   └── build
 │   	  └── html
@@ -28,7 +29,7 @@
 Documentation for all my code can be found in the index.html file located in the docs folder as indicated in the file structure above
 
 ### Part 1-5
-Code (with functions imported from scripts.NN.py), figures, and my answers for parts 1-5 are located in the Jupyter notebook "BrendaMiao_BMI203_HW3.ipynb" in the root folder. The data folder was not changed
+Code (with functions imported from scripts.NN.py), figures, and my answers for parts 1-5 are located in the Jupyter notebook "BrendaMiao_BMI203_HW3.ipynb" in the root folder. The final test predictions are located in the "output" folder as a tsp file. The data folder was not changed.
 
 ### Part 6: Requirements & testing
 Additional packages imported for scripts.NN.py are updated in the requirements. Unit tests are located in test_NN.py and passing indicated by the badge in this repository
