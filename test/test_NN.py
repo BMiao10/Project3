@@ -99,8 +99,8 @@ def test_fit():
 	assert (nn.layers[-1].shape == (3,3))
 	
 	# check that the weights have been updated
-	assert !(nn.weights[0] == np.array([w])).all()
-	assert !(nn.bias == np.array([b])).all()
+	assert ~(nn.weights[0] == np.array([w])).all()
+	assert ~(nn.bias == np.array([b])).all()
 
 	# check that the 
 
