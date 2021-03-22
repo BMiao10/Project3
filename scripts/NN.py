@@ -249,7 +249,7 @@ def read_fasta(input_file):
         input_file (str, path-like) : Path to fasta file to be read in. Fasta file can contain list of sequences with or without fasta headers
 	
 	Returns:
-		list : list of sequences extracted from fasta file
+		list, dict : list or dict {sequence : headers} of sequences extracted from fasta file
 
     """
 
