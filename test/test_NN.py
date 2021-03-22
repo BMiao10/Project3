@@ -14,7 +14,7 @@ def test_encoder():
 	assert (len(NN.encode("acgt")) == 16)
 
 	# test that a sequence returns the right encoded values
-	assert ((encode("acgt") == [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]).all())
+	assert ((NN.encode("acgt") == [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]).all())
 
 def test_read_fasta():
 
